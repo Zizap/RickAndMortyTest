@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp">
+
+
+        <ImageView
+            android:id="@+id/imageCharacter"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-5dp"
+            android:background="@drawable/style_img"
+            android:elevation="20dp"
+            android:scaleType="centerCrop"
+            ></ImageView>
+
+
+        <TextView
+            android:id="@+id/nameCharacter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="152dp"
+            android:gravity="top"
+            android:text="@string/rick_sanche"
+            android:textAppearance="@style/rick_sanche"></TextView>
+
+        <TextView
+            android:id="@+id/genderCharacter"
+            android:layout_width="87dp"
+            android:layout_height="17dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="152dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:text="@string/human_male"
+            android:textAppearance="@style/human_male"
+            android:gravity="top"></TextView>
+
+        <Button
+            android:layout_width="148dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/style_btn_main"
+            android:drawableLeft="@drawable/polygon"
+            android:drawablePadding="-5dp"
+            android:padding="8dp"
+            android:text="@string/watch_episo"
+            android:textAppearance="@style/watch_episo"
+            android:textColor="@color/orange">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/locationCharacter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="95dp"
+            android:drawableLeft="@drawable/vector"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="@string/earth_c_500"
+            android:textAppearance="@style/earth_c_500"></TextView>
+
+        <TextView
+            android:id="@+id/statusCharacter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="328dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/status_bar_green"
+            android:gravity="center"
+            android:paddingHorizontal="3dp"
+            android:paddingVertical="2dp"
+            android:text="@string/alive"
+            android:textAllCaps="true"
+            android:textAppearance="@style/alive"></TextView>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+ <TextView
+     android:id="@+id/characters"
+     android:layout_width="174dp"
+     android:layout_height="37dp"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentTop="true"
+     android:layout_marginLeft="24dp"
+     android:layout_marginTop="66dp"
+     android:gravity="top"
+     android:text="@string/characters"
+     android:textAppearance="@style/characters" >
+
+ </TextView>
+ <androidx.recyclerview.widget.RecyclerView
+     android:id="@+id/charactersList"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/characters">
+
+ </androidx.recyclerview.widget.RecyclerView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginTop="10dp">
+ <Button
+     android:id="@+id/LoadMore"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:background="@drawable/style_btn_main"
+     android:drawablePadding="-5dp"
+     android:padding="8dp"
+     android:text="@string/loadmore"
+     android:textAppearance="@style/watch_episo"
+     android:textColor="@color/orange"
+     android:onClick="loadMore"
+     ></Button>
+</LinearLayout>
+
+
+
+
+
+</RelativeLayout>

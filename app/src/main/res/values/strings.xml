@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RickAndMortyTest</string>
+    <string name="characters">Characters</string>
+    <string name="rick_sanche">Rick Sanchez</string>
+    <string name="human_male">Human, male</string>
+    <string name="watch_episo">Watch episodes</string>
+    <string name="earth_c_500">Earth (C-500A)</string>
+    <string name="alive">Alive</string>
+    <string name="loadmore">Load more</string>
+</resources>
