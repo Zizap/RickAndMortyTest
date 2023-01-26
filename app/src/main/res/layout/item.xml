@@ -14,14 +14,13 @@
             android:layout_marginTop="-5dp"
             android:background="@drawable/style_img"
             android:elevation="20dp"
-            android:scaleType="centerCrop"
-            ></ImageView>
+            android:scaleType="centerCrop"></ImageView>
 
 
         <TextView
             android:id="@+id/nameCharacter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="152dp"
             android:gravity="top"
@@ -67,7 +66,7 @@
             android:layout_marginTop="95dp"
             android:drawableLeft="@drawable/vector"
             android:drawablePadding="5dp"
-            android:gravity="center"
+
             android:text="@string/earth_c_500"
             android:textAppearance="@style/earth_c_500"></TextView>
 
