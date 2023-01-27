@@ -3,17 +3,15 @@ package com.example.rickandmortytest
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item.*
 import org.json.JSONObject
 
-private lateinit var charaterAdapter : CharacterAdapter
+private lateinit var characterAdapter : CharacterAdapter
 
 var a = 1
 var b = 100
@@ -44,7 +42,7 @@ class MainActivity : AppCompatActivity() {
           
           val jsonObject = JSONObject(result)
           try {
-              charaterAdapter.addCharacter(
+              characterAdapter.addCharacter(
                   Character(
                       name = jsonObject.getString("name").toString(),
                       gender = jsonObject.getString("gender").toString(),
@@ -66,10 +64,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecycleView(){
-        charaterAdapter = CharacterAdapter()
+        characterAdapter = CharacterAdapter()
         with(charactersList) {
             this.layoutManager = LinearLayoutManager(context)
-            this.adapter = charaterAdapter
+            this.adapter = characterAdapter
             this.setHasFixedSize(true)
 
         }

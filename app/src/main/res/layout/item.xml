@@ -11,7 +11,6 @@
             android:layout_height="120dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="-5dp"
             android:background="@drawable/style_img"
             android:elevation="20dp"
             android:scaleType="centerCrop"></ImageView>
