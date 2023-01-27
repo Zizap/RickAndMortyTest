@@ -14,14 +14,14 @@ import org.json.JSONObject
 private lateinit var characterAdapter : CharacterAdapter
 
 var a = 1
-var b = 100
+var b = 50
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initRecycleView()
-        requestCharacter(1..100)
+        requestCharacter(a..b)
     }
 
      private fun requestCharacter(count:IntRange)  {
@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
     fun loadMore(view: View){
         // плохо с корутинами, сделал кнопку
         if (b <= 800){
-            a += 100
-            b += 100
+            a += 50
+            b += 50
             requestCharacter(a..b)
         }
     }
