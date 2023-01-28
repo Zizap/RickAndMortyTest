@@ -9,6 +9,10 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 private lateinit var characterAdapter : CharacterAdapter
@@ -21,7 +25,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initRecycleView()
-        requestCharacter(a..b)
+        CoroutineScope(Dispatchers.IO).launch {
+            requestCharacter(a..b)
+        }
+
     }
 
      private fun requestCharacter(count:IntRange)  {
@@ -55,11 +62,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loadMore(view: View){
-        // плохо с корутинами, сделал кнопку
         if (b <= 800){
             a += 50
             b += 50
-            requestCharacter(a..b)
+            CoroutineScope(Dispatchers.IO).launch {
+                requestCharacter(a..b)
+            }
         }
     }
 
