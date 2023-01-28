@@ -1,6 +1,8 @@
 package com.example.rickandmortytest
 
 import android.graphics.Color
+import android.graphics.ColorMatrix
+import android.graphics.ColorMatrixColorFilter
 import android.graphics.drawable.ColorDrawable
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
@@ -16,20 +18,28 @@ class CharacterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
                 genderCharacter.text = gender
                 locationCharacter.text = location
                 statusCharacter.text = status
-                if (status == "Alive") {
-                    statusCharacter.setBackgroundResource(R.drawable.status_bar_green)
-                    statusCharacter.setTextColor(Color.parseColor("#319F16"))
-                }
-                else if (status == "Dead") {
-                    statusCharacter.setBackgroundResource(R.drawable.status_bar_red)
-                    statusCharacter.setTextColor(Color.parseColor("#E93800"))
-                }
-                else if (status == "Unknown") {
-                    statusCharacter.setBackgroundResource(R.drawable.status_bar_gray)
-                    statusCharacter.setTextColor(Color.parseColor("#A0A0A0"))
+                when (status.toString()){
+                    "Alive" -> {
+                        statusCharacter.setBackgroundResource(R.drawable.status_bar_green)
+                        statusCharacter.setTextColor(Color.parseColor("#319F16"))
+                        imageCharacter.colorFilter = ColorMatrixColorFilter(ColorMatrix().apply { setSaturation(1f)})
+                    }
+                    "Dead" -> {
+                        statusCharacter.setBackgroundResource(R.drawable.status_bar_red)
+                        statusCharacter.setTextColor(Color.parseColor("#E93800"))
+                        imageCharacter.colorFilter = ColorMatrixColorFilter(ColorMatrix().apply { setSaturation(0f)})
+                    }
+                    "unknown" -> {
+                        statusCharacter.setBackgroundResource(R.drawable.status_bar_gray)
+                        statusCharacter.setTextColor(Color.parseColor("#A0A0A0"))
+                        imageCharacter.colorFilter = ColorMatrixColorFilter(ColorMatrix().apply { setSaturation(1f)})
+                    }
                 }
                 Glide.with(context).load(characterImageUrl).into(imageCharacter)
                 imageCharacter.clipToOutline = true
+
+
+
 
             }
         }
