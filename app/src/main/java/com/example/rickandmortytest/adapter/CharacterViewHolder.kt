@@ -1,12 +1,12 @@
-package com.example.rickandmortytest
+package com.example.rickandmortytest.adapter
 
 import android.graphics.Color
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
-import android.graphics.drawable.ColorDrawable
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.rickandmortytest.R
 import kotlinx.android.synthetic.main.item.view.*
 
 class CharacterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

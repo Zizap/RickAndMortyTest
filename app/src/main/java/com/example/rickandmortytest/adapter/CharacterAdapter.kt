@@ -1,8 +1,9 @@
-package com.example.rickandmortytest
+package com.example.rickandmortytest.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.rickandmortytest.R
 
 class CharacterAdapter: RecyclerView.Adapter<CharacterViewHolder>() {
 
