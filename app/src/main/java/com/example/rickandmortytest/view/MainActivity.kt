@@ -1,5 +1,6 @@
 package com.example.rickandmortytest.view
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +23,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initRecycleView()
-        
+        reqCharacter()
+    }
+
+    fun onLoadMoreClick(view: View){
+        if (characterCount <= Constans.LIMIT_CONST.value){
+            characterCount += Constans.PLUS_CONST.value
+            reqCharacter()
+        }
+    }
+
+    private fun reqCharacter() {
+
         CoroutineScope(Dispatchers.IO).launch {
             request = RequestCharacter()
             request.requestCharacter(
@@ -33,25 +45,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun loadMore(view: View){
-        if (characterCount <= Constans.LIMIT_CONST.value){
-            characterCount += Constans.PLUS_CONST.value
-            CoroutineScope(Dispatchers.IO).launch {
-                request.requestCharacter(
-                    characterCount..characterCount+Constans.PLUS_CONST.value,
-                    applicationContext,
-                    characterAdapter
-                )
-            }
-        }
-    }
-
     private fun initRecycleView(){
         characterAdapter = CharacterAdapter()
         with(charactersList) {
             this.layoutManager = LinearLayoutManager(context)
             this.adapter = characterAdapter
             this.setHasFixedSize(true)
+        }
+    }
+
+    private fun launchProgressBar(){
+        when (btn_loadMore.visibility){
+            View.VISIBLE -> {
+                btn_loadMore.visibility = View.GONE
+                pb_req.visibility = View.VISIBLE
+            }
+            View.GONE -> {
+                btn_loadMore.visibility = View.VISIBLE
+                pb_req.visibility = View.GONE
+
+            }
         }
     }
 }

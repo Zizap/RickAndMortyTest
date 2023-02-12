@@ -35,7 +35,7 @@
     android:layout_marginTop="10dp"
     android:layout_below="@+id/charactersList">
  <Button
-     android:id="@+id/LoadMore"
+     android:id="@+id/btn_loadMore"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:background="@drawable/style_btn_main"
@@ -44,9 +44,20 @@
      android:text="@string/loadmore"
      android:textAppearance="@style/watch_episo"
      android:textColor="@color/orange"
-     android:onClick="loadMore"
+     android:onClick="onLoadMoreClick"
+     android:visibility="visible"
      ></Button>
+ <ProgressBar
+     android:id="@+id/pb_req"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:visibility="gone"
+     >
+
+ </ProgressBar>
 
 </LinearLayout>
+
+
 
 </RelativeLayout>
