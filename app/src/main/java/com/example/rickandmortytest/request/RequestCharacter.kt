@@ -16,7 +16,7 @@ class RequestCharacter {
         for (i in count){
             val url = "${ConstansString.URL.value}$i"
             val queue = Volley.newRequestQueue(context)
-            var request = StringRequest(
+            val request = StringRequest(
                 Request.Method.GET,
                 url, { result -> parseRequest(result, characterAdapter) }, { error -> Log.d("MyLog", "Error: $error") }
             )

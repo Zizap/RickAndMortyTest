@@ -1,7 +1,8 @@
 package com.example.rickandmortytest.view
 
-import android.opengl.Visibility
+
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun reqCharacter() {
-
         CoroutineScope(Dispatchers.IO).launch {
             request = RequestCharacter()
             request.requestCharacter(
@@ -54,19 +54,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun launchProgressBar(){
-        when (btn_loadMore.visibility){
-            View.VISIBLE -> {
-                btn_loadMore.visibility = View.GONE
-                pb_req.visibility = View.VISIBLE
-            }
-            View.GONE -> {
-                btn_loadMore.visibility = View.VISIBLE
-                pb_req.visibility = View.GONE
 
-            }
-        }
-    }
 }
 
-//val toast = Toast.makeText(applicationContext, "${ConstansString.URL.value}3", Toast.LENGTH_SHORT).show()

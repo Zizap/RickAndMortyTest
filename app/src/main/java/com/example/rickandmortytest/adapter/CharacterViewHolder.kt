@@ -18,7 +18,7 @@ class CharacterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
                 genderCharacter.text = gender
                 locationCharacter.text = location
                 statusCharacter.text = status
-                when (status.toString()){
+                when (status){
                     "Alive" -> {
                         statusCharacter.setBackgroundResource(R.drawable.status_bar_green)
                         statusCharacter.setTextColor(Color.parseColor("#319F16"))
